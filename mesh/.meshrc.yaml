@@ -1,0 +1,24 @@
+sources:
+  - name: users
+    handler:
+      graphql:
+        endpoint: http://localhost:3000/graphql
+    transforms:
+      - federation:
+          types:
+            - name: Query
+              config:
+                extend: true
+            - name: User
+              config:
+                keyFields:
+                  - id
+                resolveReference:
+                  queryFieldName: user
+  - name: articles
+    handler:
+      graphql:
+        endpoint: http://localhost:3001/graphql
+
+serve:
+  playground: true
