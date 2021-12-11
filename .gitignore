@@ -66,3 +66,11 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+
+# Ignore rails logs
+*.log
+
+# Ignore rails db files
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-[0-9]*
