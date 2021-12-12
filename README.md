@@ -13,6 +13,26 @@ to serve the federated subgraphs on the /graphql endpoints,
 our setup will be able to compose them both to a supergraph schema
 that will be used to launch our gateway.
 
+### Quick start
+Launch backend services:
+```bash
+git clone git@github.com:AndreyIlyunin/federated-rails-app.git
+cd federated-rails-app
+
+docker-compose up --build
+```
+Setup db:
+```bash
+docker-compose exec users rails db:create db:migrate db:seed
+docker-compose exec articles rails db:create db:migrate db:seed
+```
+Compose graphql schema:
+```bash
+npm install -g @apollo/rover
+rover supergraph compose --config ./supergraph-config.yaml > supergraph.graphql
+```
+Launch gateway with `node index.js`
+
 ### Reproduce
 Create api-only rails applications (as much as you need):
 ```bash
