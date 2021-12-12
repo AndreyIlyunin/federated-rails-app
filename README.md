@@ -23,11 +23,15 @@ docker-compose up --build
 ```
 Setup db:
 ```bash
+cd federated-rails-app
+
 docker-compose exec users rails db:create db:migrate db:seed
 docker-compose exec articles rails db:create db:migrate db:seed
 ```
 Compose graphql schema:
 ```bash
+cd gateway
+
 npm install -g @apollo/rover
 rover supergraph compose --config ./supergraph-config.yaml > supergraph.graphql
 ```
