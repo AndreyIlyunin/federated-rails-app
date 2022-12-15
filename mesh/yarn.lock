@@ -1575,8 +1575,8 @@ dot-case@^3.0.4:
     tslib "^2.0.3"
 
 dset@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/dset/-/dset-3.1.1.tgz"
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/dset/-/dset-3.1.2.tgz#89c436ca6450398396dc6538ea00abc0c54cd45a"
 
 ee-first@1.1.1:
   version "1.1.1"
