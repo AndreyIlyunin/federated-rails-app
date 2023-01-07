@@ -2138,10 +2138,8 @@ json-schema@^0.2.3:
   resolved "https://registry.npmjs.org/json-schema/-/json-schema-0.2.5.tgz"
 
 json5@^2.1.2:
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/json5/-/json5-2.2.0.tgz"
-  dependencies:
-    minimist "^1.2.5"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
@@ -2259,10 +2257,6 @@ minimatch@^3.0.4:
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz"
   dependencies:
     brace-expansion "^1.1.7"
-
-minimist@^1.2.5:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
 
 mkdirp@1.0.4:
   version "1.0.4"
