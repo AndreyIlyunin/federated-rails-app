@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@graphql-mesh/cli": "^0.38.2",
-    "@graphql-mesh/graphql": "^0.18.8",
-    "@graphql-mesh/transform-federation": "^0.6.0",
+    "@graphql-mesh/cli": "^0.82.13",
+    "@graphql-mesh/graphql": "^0.33.10",
+    "@graphql-mesh/transform-federation": "^0.10.7",
     "graphql": "^15.5.3",
     "mesh": "^7.0.3"
   }
