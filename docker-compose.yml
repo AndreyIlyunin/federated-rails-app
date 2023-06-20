@@ -5,44 +5,40 @@ services:
     build:
       context: ./users
       dockerfile: Dockerfile
-    depends_on:
-      - users_database
     ports:
       - "3000:3000"
     volumes:
       - users_app:/app
       - users_gem_cache:/usr/local/bundle/gems
-    environment:
-      RAILS_ENV: development
-
-  users_database:
-    image: nouchka/sqlite3:latest
-    volumes:
-      - users_db_data:/root/db
 
   articles:
     build:
       context: ./articles
       dockerfile: Dockerfile
-    depends_on:
-      - articles_database
     ports:
       - "3001:3000"
     volumes:
       - articles_app:/app
       - articles_gem_cache:/usr/local/bundle/gems
-    environment:
-      RAILS_ENV: development
 
-  articles_database:
-    image: nouchka/sqlite3:latest
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - articles
+      - users
     volumes:
-      - articles_db_data:/root/db
+      - gateway:/app
+    environment:
+      USERS_HOST: users:3000
+      ARTICLES_HOST: articles:3000
 
 volumes:
   users_app:
   users_gem_cache:
-  users_db_data:
   articles_app:
   articles_gem_cache:
-  articles_db_data:
+  gateway:

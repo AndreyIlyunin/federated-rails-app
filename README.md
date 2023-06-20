@@ -21,21 +21,25 @@ cd federated-rails-app
 
 docker-compose up --build
 ```
-Setup db:
+
+Articles and users servers would be acceptable for http://localhost:3001 and http://localhost:3000.
+Gateway - http://localhost:4000
+
+Setup db (on first launch):
 ```bash
 cd federated-rails-app
 
 docker-compose exec users rails db:create db:migrate db:seed
 docker-compose exec articles rails db:create db:migrate db:seed
 ```
-Compose graphql schema:
+
+Compose graphql supergraph schema (if not exists, **before** building container):
 ```bash
 cd gateway
 
 npm install -g @apollo/rover
 rover supergraph compose --config ./supergraph-config.yaml > supergraph.graphql
 ```
-Launch gateway with `node index.js`
 
 ### Reproduce
 Create api-only rails applications (as much as you need):
